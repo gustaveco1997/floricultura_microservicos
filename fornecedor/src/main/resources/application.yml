@@ -1,0 +1,9 @@
+# este arquivo é lido em um contexto anterior do application.yml ou application.properties
+spring:
+    application:
+        name: "fornecedor"
+    profile:
+        active: default
+    cloud:
+        config:
+            uri: http://localhost:8888

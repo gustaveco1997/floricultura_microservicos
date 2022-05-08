@@ -13,7 +13,7 @@ spring:
             ddl-auto: create
         show-sql: true
     datasource:
-        url: jdbc:mysql://localhost:3308/fornecedor_floricultura
+        url: jdbc:mariadb://localhost:3308/fornecedor_floricultura
         username: root
         password: 1234
         driver-class-name: org.mariadb.jdbc.Driver
