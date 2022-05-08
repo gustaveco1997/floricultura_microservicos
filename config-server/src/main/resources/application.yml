@@ -1,10 +1,9 @@
-server:
-    port: 8888
-    
+# este arquivo é lido em um contexto anterior do application.yml ou application.properties
 spring:
+    application:
+        name: "fornecedor"
+    profile:
+        active: default
     cloud:
         config:
-          server:
-             git:
-                 uri: https://github.com/gustaveco1997/floricultura_microsservicos                 
-                        
+            uri: http://localhost:8888
