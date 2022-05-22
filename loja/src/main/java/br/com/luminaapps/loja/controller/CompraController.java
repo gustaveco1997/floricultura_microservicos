@@ -1,7 +1,10 @@
 package br.com.luminaapps.loja.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,14 +16,20 @@ import br.com.luminaapps.loja.service.CompraService;
 @RestController
 @RequestMapping("/compra")
 public class CompraController {
-	
+
 	@Autowired
 	private CompraService compraService;
-	
+
 	@PostMapping
-	public ResponseEntity<?> compra(@RequestBody CompraDTO compra){
+	public ResponseEntity<?> compra(@RequestBody CompraDTO compra) {
 		compraService.realizarCompra(compra);
 		return ResponseEntity.ok().build();
+	}
+	
+	@GetMapping
+	public ResponseEntity<List<String>> instancesFornecedor() {
+		//Ribbon
+		return ResponseEntity.ok(compraService.getInstancesFornecedor());
 	}
 
 }

@@ -1,8 +1,9 @@
 server:
-    port=8888
+    port: 8888
 #puxa as configurações do repitório git
 spring:
     cloud:
         config:
             server:
-                git.uri=https://github.com/oswaldoneto/dio-experts-config.git
+                git:
+                   uri: https://github.com/gustaveco1997/floricultura_microsservicos.git
